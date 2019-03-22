@@ -7,13 +7,8 @@ docker push arturkociuba/multi-worker:latest
 docker push arturkociuba/multi-client:$SHA
 docker push arturkociuba/multi-server:$SHA
 docker push arturkociuba/multi-worker:$SHA
-#kubectl apply -f k8s
-#kubectl set image deployments/client-deployment client=arturkociuba/multi-client:$SHA
-#kubectl set image deployments/server-deployment server=arturkociuba/multi-server:$SHA
-#kubectl set image deployments/worker-deployment worker=arturkociuba/multi-worker:$SHA
-
-kubectl set image deployments/client-deployment client=stephengrider/multi-client:latest
-kubectl set image deployments/server-deployment server=stephengrider/multi-server:latest
-kubectl set image deployments/worker-deployment worker=stephengrider/multi-worker:latest
-
+kubectl apply -f k8s
+kubectl set image deployments/client-deployment client=arturkociuba/multi-client:$SHA
+kubectl set image deployments/server-deployment server=arturkociuba/multi-server:$SHA
+kubectl set image deployments/worker-deployment worker=arturkociuba/multi-worker:$SHA
 
